@@ -1685,18 +1685,6 @@ Stage 4 proposals already marked in `core-js` as stable ECMAScript, they will be
 ```js
 core-js(-pure)/stage/4
 ```
-##### [`String#matchAll`](https://github.com/tc39/proposal-string-matchall)[⬆](#index)
-Module [`esnext.string.match-all`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.string.match-all.js).
-
-```js
-class String {
-  matchAll(regexp: RegExp): Iterator;
-}
-```
-[*CommonJS entry points:*](#commonjs-api)
-```js
-core-js/proposals/string-match-all
-```
 ##### [`Promise.any`](https://github.com/tc39/proposal-promise-any)[⬆](#index)
 Modules [`esnext.promise.any`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.promise.any.js) and [`esnext.aggregate-error`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.aggregate-error.js)
 ```js
