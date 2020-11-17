@@ -1685,20 +1685,6 @@ Stage 4 proposals already marked in `core-js` as stable ECMAScript, they will be
 ```js
 core-js(-pure)/stage/4
 ```
-##### [`globalThis`](https://github.com/tc39/proposal-global)[⬆](#index)
-Module [`esnext.global-this`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.global-this.js).
-```js
-let globalThis: Object;
-```
-[*CommonJS entry points:*](#commonjs-api)
-```js
-core-js/proposals/global-this
-core-js(-pure)/features/global-this
-```
-[*Examples*](https://goo.gl/LAifsc):
-```js
-globalThis.Array === Array; // => true
-```
 ##### [`String#matchAll`](https://github.com/tc39/proposal-string-matchall)[⬆](#index)
 Module [`esnext.string.match-all`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.string.match-all.js).
 
