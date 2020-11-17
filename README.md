@@ -1697,22 +1697,6 @@ class String {
 ```js
 core-js/proposals/string-match-all
 ```
-##### [`String#replaceAll`](https://github.com/tc39/proposal-string-replace-all)[⬆](#index)
-Module [`esnext.string.replace-all`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.string.replace-all.js)
-```js
-class String {
-  replaceAll(searchValue: string | RegExp, replaceString: string | (searchValue, index, this) => string): string;
-}
-```
-[*CommonJS entry points:*](#commonjs-api)
-```js
-core-js/proposals/string-replace-all
-core-js/features/string/replace-all
-```
-[*Examples*](https://goo.gl/wUXNXN):
-```js
-'Test abc test test abc test.'.replaceAll('abc', 'foo'); // -> 'Test foo test test foo test.'
-```
 ##### [`Promise.any`](https://github.com/tc39/proposal-promise-any)[⬆](#index)
 Modules [`esnext.promise.any`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.promise.any.js) and [`esnext.aggregate-error`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.aggregate-error.js)
 ```js

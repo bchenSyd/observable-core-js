@@ -311,7 +311,6 @@ import './esnext.symbol.async-dispose';
 import './esnext.symbol.dispose';
 import './esnext.symbol.observable';
 import './esnext.symbol.pattern-match';
-import './esnext.symbol.replace-all';
 import './esnext.typed-array.at';
 import './esnext.typed-array.filter-out';
 import './esnext.typed-array.find-last';
