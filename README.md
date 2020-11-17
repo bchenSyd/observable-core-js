@@ -1685,39 +1685,8 @@ Stage 4 proposals already marked in `core-js` as stable ECMAScript, they will be
 ```js
 core-js(-pure)/stage/4
 ```
-##### [`Promise.any`](https://github.com/tc39/proposal-promise-any)[⬆](#index)
-Modules [`esnext.promise.any`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.promise.any.js) and [`esnext.aggregate-error`](https://github.com/zloirock/core-js/blob/v3.8.3/packages/core-js/modules/esnext.aggregate-error.js)
-```js
-class AggregateError {
-  constructor(errors: Iterable, message: string): AggregateError;
-  errors: Array<any>;
-  message: string;
-}
 
-class Promise {
-  static any(promises: Iterable): Promise<any>;
-}
-```
-[*CommonJS entry points:*](#commonjs-api)
-```js
-core-js/proposals/promise-any
-core-js(-pure)/features/promise/any
-core-js(-pure)/features/aggregate-error
-```
-[*Examples*](https://goo.gl/iErvmp):
-```js
-Promise.any([
-  Promise.resolve(1),
-  Promise.reject(2),
-  Promise.resolve(3),
-]).then(console.log); // => 1
-
-Promise.any([
-  Promise.reject(1),
-  Promise.reject(2),
-  Promise.reject(3),
-]).catch(({ errors }) => console.log(errors)); // => [1, 2, 3]
-```
+None.
 
 #### Stage 3 proposals[⬆](#index)
 [*CommonJS entry points:*](#commonjs-api)
