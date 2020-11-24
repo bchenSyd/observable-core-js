@@ -239,8 +239,6 @@ import './esnext.set.some';
 import './esnext.set.symmetric-difference';
 import './esnext.set.union';
 import './esnext.string.at';
-// TODO: disabled by default because of the conflict with another proposal
-// import './esnext.string.at-alternative';
 import './esnext.string.code-points';
 import './esnext.symbol.async-dispose';
 import './esnext.symbol.dispose';
