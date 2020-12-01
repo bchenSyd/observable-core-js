@@ -15,7 +15,6 @@ require('../modules/es.symbol.to-string-tag');
 require('../modules/es.symbol.unscopables');
 require('../modules/es.aggregate-error');
 require('../modules/es.array.from');
-require('../modules/es.array.is-array');
 require('../modules/es.array.of');
 require('../modules/es.array.concat');
 require('../modules/es.array.copy-within');

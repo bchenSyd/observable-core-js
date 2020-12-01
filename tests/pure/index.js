@@ -17,7 +17,6 @@ import './es.array.flat-map';
 import './es.array.from';
 import './es.array.includes';
 import './es.array.index-of';
-import './es.array.is-array';
 import './es.array.iterator';
 import './es.array.join';
 import './es.array.last-index-of';

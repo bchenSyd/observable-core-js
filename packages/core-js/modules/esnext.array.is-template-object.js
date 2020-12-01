@@ -1,6 +1,6 @@
 var $ = require('../internals/export');
-var isArray = require('../internals/is-array');
 
+var isArray = Array.isArray;
 var isFrozen = Object.isFrozen;
 
 var isFrozenStringArray = function (array, allowUndefined) {
