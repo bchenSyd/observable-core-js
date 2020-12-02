@@ -141,7 +141,6 @@ require('../modules/es.math.sinh');
 require('../modules/es.math.tanh');
 require('../modules/es.math.to-string-tag');
 require('../modules/es.math.trunc');
-require('../modules/es.date.now');
 require('../modules/es.date.to-json');
 require('../modules/es.date.to-iso-string');
 require('../modules/es.date.to-string');
