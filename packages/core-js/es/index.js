@@ -42,7 +42,6 @@ require('../modules/es.array.species');
 require('../modules/es.array.unscopables.flat');
 require('../modules/es.array.unscopables.flat-map');
 require('../modules/es.array.iterator');
-require('../modules/es.function.bind');
 require('../modules/es.function.name');
 require('../modules/es.function.has-instance');
 require('../modules/es.global-this');

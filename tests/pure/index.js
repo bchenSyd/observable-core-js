@@ -31,7 +31,6 @@ import './es.array.sort';
 import './es.array.splice';
 import './es.date.to-iso-string';
 import './es.date.to-json';
-import './es.function.bind';
 import './es.function.has-instance';
 import './es.global-this';
 import './es.json.stringify';
