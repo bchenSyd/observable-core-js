@@ -14,5 +14,5 @@ var trimStart = FORCED ? function trimStart() {
 // https://tc39.es/ecma262/#String.prototype.trimleft
 $({ target: 'String', proto: true, forced: FORCED }, {
   trimStart: trimStart,
-  trimLeft: trimStart
+  trimLeft: trimStart,
 });

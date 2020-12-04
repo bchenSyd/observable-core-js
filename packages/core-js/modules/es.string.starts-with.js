@@ -28,5 +28,5 @@ $({ target: 'String', proto: true, forced: !MDN_POLYFILL_BUG && !CORRECT_IS_REGE
     return nativeStartsWith
       ? nativeStartsWith.call(that, search, index)
       : that.slice(index, index + search.length) === search;
-  }
+  },
 });

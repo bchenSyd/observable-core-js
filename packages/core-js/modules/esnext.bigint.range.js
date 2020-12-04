@@ -9,6 +9,6 @@ if (typeof BigInt == 'function') {
     range: function range(start, end, option) {
       /* global BigInt -- safe */
       return new RangeIterator(start, end, option, 'bigint', BigInt(0), BigInt(1));
-    }
+    },
   });
 }

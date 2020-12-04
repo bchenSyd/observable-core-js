@@ -7,6 +7,6 @@ var UNSUPPORTED_Y = require('../internals/regexp-sticky-helpers').UNSUPPORTED_Y;
 if (/./g.flags != 'g' || UNSUPPORTED_Y) {
   objectDefinePropertyModule.f(RegExp.prototype, 'flags', {
     configurable: true,
-    get: regExpFlags
+    get: regExpFlags,
   });
 }

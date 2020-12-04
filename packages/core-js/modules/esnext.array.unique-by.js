@@ -32,7 +32,7 @@ $({ target: 'Array', proto: true }, {
       push.call(result, value);
     });
     return result;
-  }
+  },
 });
 
 addToUnscopables('uniqueBy');

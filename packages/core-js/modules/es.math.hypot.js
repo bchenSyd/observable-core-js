@@ -30,5 +30,5 @@ $({ target: 'Math', stat: true, forced: BUGGY }, {
       } else sum += arg;
     }
     return larg === Infinity ? Infinity : larg * sqrt(sum);
-  }
+  },
 });

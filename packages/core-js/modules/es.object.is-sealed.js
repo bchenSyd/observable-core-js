@@ -10,5 +10,5 @@ var FAILS_ON_PRIMITIVES = fails(function () { nativeIsSealed(1); });
 $({ target: 'Object', stat: true, forced: FAILS_ON_PRIMITIVES }, {
   isSealed: function isSealed(it) {
     return isObject(it) ? nativeIsSealed ? nativeIsSealed(it) : false : true;
-  }
+  },
 });

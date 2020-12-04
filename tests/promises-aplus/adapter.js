@@ -24,5 +24,5 @@ module.exports = {
   },
   removeGlobalPromise: function () {
     delete global.Promise;
-  }
+  },
 };

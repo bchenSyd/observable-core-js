@@ -14,5 +14,5 @@ var trimEnd = FORCED ? function trimEnd() {
 // https://tc39.es/ecma262/#String.prototype.trimright
 $({ target: 'String', proto: true, forced: FORCED }, {
   trimEnd: trimEnd,
-  trimRight: trimEnd
+  trimRight: trimEnd,
 });

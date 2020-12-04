@@ -84,5 +84,5 @@ var unpack = function (buffer, mantissaLength) {
 
 module.exports = {
   pack: pack,
-  unpack: unpack
+  unpack: unpack,
 };
