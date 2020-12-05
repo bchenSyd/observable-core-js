@@ -46,7 +46,6 @@ require('../modules/es.function.name');
 require('../modules/es.function.has-instance');
 require('../modules/es.global-this');
 require('../modules/es.object.assign');
-require('../modules/es.object.define-property');
 require('../modules/es.object.entries');
 require('../modules/es.object.freeze');
 require('../modules/es.object.from-entries');
