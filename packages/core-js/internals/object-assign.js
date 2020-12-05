@@ -1,11 +1,11 @@
 'use strict';
 var fails = require('../internals/fails');
-var objectKeys = require('../internals/object-keys');
 var getOwnPropertySymbolsModule = require('../internals/object-get-own-property-symbols');
 var propertyIsEnumerableModule = require('../internals/object-property-is-enumerable');
 var toObject = require('../internals/to-object');
 var IndexedObject = require('../internals/indexed-object');
 
+var objectKeys = Object.keys;
 var nativeAssign = Object.assign;
 var defineProperty = Object.defineProperty;
 
