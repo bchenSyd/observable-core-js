@@ -185,7 +185,6 @@ import './esnext.math.rad-per-deg';
 import './esnext.math.radians';
 import './esnext.math.scale';
 import './esnext.math.signbit';
-import './esnext.math.seeded-prng';
 import './esnext.number.from-string';
 import './esnext.number.range';
 import './esnext.observable';
