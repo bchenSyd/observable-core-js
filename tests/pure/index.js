@@ -239,7 +239,6 @@ import './esnext.string.code-points';
 import './esnext.symbol.async-dispose';
 import './esnext.symbol.dispose';
 import './esnext.symbol.observable';
-import './esnext.symbol.pattern-match';
 import './esnext.weak-map.delete-all';
 import './esnext.weak-map.emplace';
 import './esnext.weak-map.from';
