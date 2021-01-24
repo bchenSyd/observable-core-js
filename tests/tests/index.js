@@ -323,6 +323,7 @@ import './web.dom-collections.for-each';
 import './web.dom-collections.iterator';
 import './web.immediate';
 import './web.queue-microtask';
-import './web.timers';
+import './web.set-interval';
+import './web.set-timeout';
 import './web.url';
 import './web.url-search-params';
