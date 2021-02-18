@@ -18,10 +18,8 @@ module.exports = {
     });
   },
   "Returns false when the subscription is active": function (test, _ref2) {
-    debugger;
     var Observable = _ref2.Observable;
     new Observable(function (observer) {
-      debugger;
       test._("Returns false when the subscription is active").equals(observer.closed, false);
     }).subscribe({});
   },
