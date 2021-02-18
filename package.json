@@ -63,10 +63,11 @@
     "url": "https://github.com/zloirock/core-js.git"
   },
   "scripts": {
-	"test-observables-prepare": "run-s init build-test-observables",
-	"build-test-observables":"babel node_modules/es-observable/test/ -d tests/bundles/observables-tests/&& npm run bchen",
-	"bchen":"git checkout test file I've commited; revert your local changes now",
-    "test-observables": "node --inspect-brk tests/observables/adapter",
+    "test-observables-prepare": "run-s init build-test-observables",
+    "build-test-observables": "babel node_modules/es-observable/test/ -d tests/bundles/observables-tests/&& npm run bchen",
+    "bchen": "git checkout test file I've commited; revert your local changes now",
+    "debug-observables": "node --inspect-brk tests/observables/adapter",
+    "test-observables": "node tests/observables/adapter",
     "init": "run-s clean-and-copy bootstrap build-compat",
     "clean-and-copy": "node scripts/clean-and-copy",
     "bootstrap": "lerna bootstrap --hoist --no-ci && lerna link",
