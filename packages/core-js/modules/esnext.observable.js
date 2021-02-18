@@ -49,7 +49,7 @@ var close = function (subscription, subscriptionState) {
   subscriptionState.observer = undefined;
 };
 
-//************  this is the engine ******************************************************************** */
+//************  this is the engine, pump ******************************************************************** */
 var Subscription = function (
   observer,
   subscriber /* subscription function, the glue, the connection, the touch point that make things happen */
@@ -68,7 +68,7 @@ var Subscription = function (
   }
   if (subscriptionClosed(subscriptionState)) return;
   //*********************** */
-  // this is the 'observer' delegate , which is the subject;
+  // this is the 'observer' delegate
   var subscriptionObserver = (subscriptionState.subscriptionObserver = new SubscriptionObserver(
     this
   ));
