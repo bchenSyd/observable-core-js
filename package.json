@@ -86,7 +86,7 @@
     "test-unit-pure-standalone": "run-s init bundle-helpers bundle-tests-pure test-unit-pure",
     "test-promises": "promises-aplus-tests tests/promises-aplus/adapter --timeout 1000",
     "test-promises-standalone": "run-s init test-promises",
-    "test-observables": "babel node_modules/es-observable/test/ -d tests/bundles/observables-tests/ && node tests/observables/adapter && node tests/observables/adapter-pure",
+    "test-observables": "node --inspect-brk tests/observables/adapter",
     "test-observables-standalone": "run-s init test-observables",
     "test-entries": "run-p test-entries-basic test-entries-content",
     "test-entries-basic": "node tests/commonjs",

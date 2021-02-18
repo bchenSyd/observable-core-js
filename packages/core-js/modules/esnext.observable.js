@@ -48,7 +48,8 @@ var close = function (subscription, subscriptionState) {
   } subscriptionState.observer = undefined;
 };
 
-var Subscription = function (observer, subscriber) {
+//************  this is the engine ******************************************************************** */
+var Subscription = function (observer /* sub */, subscriber/* subject, observable, pub */) {
   var subscriptionState = setInternalState(this, {
     cleanup: undefined,
     observer: anObject(observer),
@@ -62,9 +63,13 @@ var Subscription = function (observer, subscriber) {
     hostReportErrors(error);
   }
   if (subscriptionClosed(subscriptionState)) return;
+  //*********************** */
+  // this is the 'observer' (incorrectly named), which is the subject,
   var subscriptionObserver = subscriptionState.subscriptionObserver = new SubscriptionObserver(this);
+  //*********************** */
   try {
-    var cleanup = subscriber(subscriptionObserver);
+    var yourObserverMethod = subscriber;
+    var cleanup = subscriber(subscriptionObserver /* this is the 'observer' passed into your function */);
     var subscription = cleanup;
     if (cleanup != null) subscriptionState.cleanup = typeof cleanup.unsubscribe === 'function'
       ? function () { subscription.unsubscribe(); }
@@ -148,19 +153,28 @@ if (DESCRIPTORS) defineProperty(SubscriptionObserver.prototype, 'closed', {
   }
 });
 
+// subscriber must be a function, and it produce events (pub)
+// Observable wont' do anything until you subscribe to it
+
 var $Observable = function Observable(subscriber) {
   anInstance(this, $Observable, 'Observable');
-  setInternalState(this, { subscriber: aFunction(subscriber) });
+  setInternalState(this, { subscriber: aFunction(subscriber) });  // Nothing is done after calling New Observable(), 
+  //  that's why it's lazy (compared to Promise which is eager)
 };
 
 redefineAll($Observable.prototype, {
+  // observer is param to Observable.subscribe function, (sub)
+  // its an object that has next/complete/error..etc;
   subscribe: function subscribe(observer) {
     var length = arguments.length;
     return new Subscription(typeof observer === 'function' ? {
       next: observer,
       error: length > 1 ? arguments[1] : undefined,
       complete: length > 2 ? arguments[2] : undefined
-    } : isObject(observer) ? observer : {}, getInternalState(this).subscriber);
+    } : isObject(observer) ? observer : {}, 
+    
+    
+    getInternalState(this).subscriber);
   }
 });
 
