@@ -27,6 +27,7 @@ module.exports = {
     debugger;
     var Observable = _ref3.Observable;
     new Observable(function (observer) {
+      debugger;
       observer.complete();
 
       test._("Returns true after complete is called").equals(observer.closed, true);

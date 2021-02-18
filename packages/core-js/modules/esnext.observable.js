@@ -51,8 +51,8 @@ var close = function (subscription, subscriptionState) {
 
 //************  this is the engine ******************************************************************** */
 var Subscription = function (
-  observer /* sub */,
-  subscriber /* subject, observable, pub */
+  observer,
+  subscriber /* subscription function, the glue, the connection, the touch point that make things happen */
 ) {
   var subscriptionState = setInternalState(this, {
     cleanup: undefined,
@@ -68,7 +68,7 @@ var Subscription = function (
   }
   if (subscriptionClosed(subscriptionState)) return;
   //*********************** */
-  // this is the 'observer' (incorrectly named), which is the subject,
+  // this is the 'observer' delegate , which is the subject;
   var subscriptionObserver = (subscriptionState.subscriptionObserver = new SubscriptionObserver(
     this
   ));
@@ -78,6 +78,21 @@ var Subscription = function (
     var cleanup = subscriber(
       subscriptionObserver /* this is the 'observer' passed into your function */
     );
+
+    //
+
+
+
+
+
+  // you subscription code is being executed here;
+  // where you invoke observer's method via "observer" delegate (SubscriptionObserver) passed on to you 
+
+
+
+
+
+
     // you can either return a function `aFunction(cleanup)`
     // or an object { unsubscribe: ()=>{ you clean up code here; }}
     var subscription = cleanup;
@@ -123,6 +138,8 @@ var SubscriptionObserver = function (subscription) {
   if (!DESCRIPTORS) this.closed = false;
 };
 
+// Observable and Observer is  tighly coupled, they know each other;
+// and it's synchronous
 SubscriptionObserver.prototype = redefineAll(
   {},
   {
@@ -134,7 +151,7 @@ SubscriptionObserver.prototype = redefineAll(
         var observer = subscriptionState.observer;
         try {
           var nextMethod = getMethod(observer.next);
-          if (nextMethod) nextMethod.call(observer, value);
+          if (nextMethod) nextMethod.call(observer, value); // ======> calling observer's next method, forwarding value
         } catch (error) {
           hostReportErrors(error);
         }
@@ -164,7 +181,7 @@ SubscriptionObserver.prototype = redefineAll(
         close(subscription, subscriptionState);
         try {
           var completeMethod = getMethod(observer.complete);
-          if (completeMethod) completeMethod.call(observer);
+          if (completeMethod) completeMethod.call(observer); //=======> calling observer's complete method here;
         } catch (error) {
           hostReportErrors(error);
         }
