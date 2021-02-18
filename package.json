@@ -64,12 +64,12 @@
   },
   "scripts": {
     "rebuild-code":"npm run build-compat",
-    "test-observables-prepare": "run-s init build-test-observables",
-    "build-test-observables": "babel node_modules/es-observable/test/ -d tests/bundles/observables-tests/&& npm run bchen",
-    "bchen": "git checkout test file I've commited; revert your local changes now",
-    "debug-observables": "node --inspect-brk tests/observables/adapter",
     "test-observables": "node tests/observables/adapter",
+    
+    "test-observables-rebuild": "run-s init build-test-observables",
+    "debug-observables": "node --inspect-brk tests/observables/adapter",
     "init": "run-s clean-and-copy bootstrap build-compat",
+    "build-test-observables": "babel node_modules/es-observable/test/ -d tests/bundles/observables-tests",
     "clean-and-copy": "node scripts/clean-and-copy",
     "bootstrap": "lerna bootstrap --hoist --no-ci && lerna link",
     "build": "run-s init bundle-package",

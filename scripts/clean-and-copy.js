@@ -23,12 +23,13 @@ async function copy(from, to, { force = false } = {}) {
 
 (async () => {
   // it's available only from Node 14.14, but this step required only for development where we use modern Node
+  // rm: node api , asynchronously removes files and directories (modeled on the standard POSIX `rm` utility).
   if (rm) {
     await Promise.all((await readdir('./packages/core-js-pure'))
       .filter(entry => !['override', '.npmignore', 'package.json', 'README.md'].includes(entry))
       .map(entry => rm(`./packages/core-js-pure/${ entry }`, { force: true, recursive: true })));
 
-    await rm('./tests/bundles', { force: true, recursive: true });
+   // await rm('./tests/bundles', { force: true, recursive: true });
 
     // eslint-disable-next-line no-console -- output
     console.log('\u001B[32mold copies removed\u001B[0m');
