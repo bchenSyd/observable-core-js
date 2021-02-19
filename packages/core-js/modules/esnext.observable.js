@@ -81,17 +81,8 @@ var Subscription = function (
 
     //
 
-
-
-
-
-  // you subscription code is being executed here;
-  // where you invoke observer's method via "observer" delegate (SubscriptionObserver) passed on to you 
-
-
-
-
-
+    // you subscription code is being executed here;
+    // where you invoke observer's method via "observer" delegate (SubscriptionObserver) passed on to you
 
     // you can either return a function `aFunction(cleanup)`
     // or an object { unsubscribe: ()=>{ you clean up code here; }}
@@ -183,6 +174,10 @@ SubscriptionObserver.prototype = redefineAll(
           var completeMethod = getMethod(observer.complete);
           if (completeMethod) completeMethod.call(observer); //=======> calling observer's complete method here;
         } catch (error) {
+          // error thrown inside complete are swallowed and printed by default (if global.console is defined)
+          // this is to make sure the cleanup code is executed regardless whether subscription exuecution result;
+          // as long as you call  complete() , close and cleanup is guaranteed
+          // see unit test tests/bundles/observables-tests/observer-complete.js:line 45
           hostReportErrors(error);
         }
         cleanupSubscription(subscriptionState);

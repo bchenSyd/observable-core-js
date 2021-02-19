@@ -65,11 +65,11 @@
   "scripts": {
     "rebuild-code":"npm run build-compat",
     "test-observables": "node tests/observables/adapter",
+    "debug-observables": "node --inspect-brk tests/observables/adapter",
 
     "bootstrap": "lerna bootstrap --hoist --no-ci && lerna link",
     "init": "run-s clean-and-copy bootstrap build-compat",
     "test-observables-rebuild": "run-s init build-test-observables",
-    "debug-observables": "node --inspect-brk tests/observables/adapter",
     "build-test-observables": "babel node_modules/es-observable/test/ -d tests/bundles/observables-tests",
     "clean-and-copy": "node scripts/clean-and-copy",
     "build": "run-s init bundle-package",

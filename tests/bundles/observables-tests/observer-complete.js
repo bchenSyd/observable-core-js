@@ -40,17 +40,27 @@ module.exports = {
       }
     });
   },
-  "Thrown error": function (test, _ref4) {
+
+
+  "Observable should be closed and cleaned up, regardless of complete callback execution result": function (test, _ref4) {
     var Observable = _ref4.Observable;
     var token = {};
     new Observable(function (observer) {
+
+      debugger;
+
       test._("Catches errors thrown from the observer").equals(observer.complete(), undefined);
+
+
     }).subscribe({
       complete: function () {
         throw new Error();
       }
     });
   },
+
+
+
   "Method lookup": function (test, _ref5) {
     var Observable = _ref5.Observable;
     var observer,
